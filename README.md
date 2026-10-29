@@ -6,26 +6,27 @@ A 3D-printable Pokémon TCG deck box styled like a Game Boy. The listing says it
 
 ## Versions at a glance
 
-Four sets of files live in [stl/](stl/), each with its own README. Print the current remix unless you have a reason not to.
+Five sets of files live in [stl/](stl/), each with its own README. Print the current remix unless you have a reason not to.
 
-| | Original by Ashwood | Remix round 1 | Remix round 2 | Remix round 3 (current) |
-|---|---|---|---|---|
-| Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/v2/](stl/remix/v2/) | [stl/remix/v3/](stl/remix/v3/) |
-| Fits sleeved cards | No: 92 mm inside, the height of a sleeve | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside |
-| Inside (W × D × H) | 68 × 35 × 92 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm |
-| Outside (W × D × H) | 76 × 43 × 96 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm |
-| Capacity | About 60 sleeved cards | Same | Same | Same |
-| Hinge | Two small snap hinges | Five knuckles on a printed pin | Same as round 1 | Same as round 1 |
-| Supports | Tree supports | None | None | None |
-| Screen frame on the lid | 1.8 mm plate | 1.8 mm plate | 4 mm frame, flush inside | 4 mm frame, flush inside |
-| Holds the lid shut | Friction only | Friction only | Two snap catches | Two snap catches |
-| Grip for opening | The window | The window | Thumb notch under the lid | Thumb notch under the lid |
-| Lid's inner edges | Square | Square | Lead-in chamfers | Lead-in chamfers |
-| Engraved in the bottom | "Ashwood" | "Ashwood" | "Ashwood" | "Yoojin", in script |
-| Parts to print | 5 | 6 (adds the pin) | 6 | 6 |
-| Test-printed | Yes, by the designer | No | No | No |
+| | Original by Ashwood | Remix round 1 | Remix round 2 | Remix round 3 | Remix round 4 (current) |
+|---|---|---|---|---|---|
+| Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/v2/](stl/remix/v2/) | [stl/remix/v3/](stl/remix/v3/) | [stl/remix/v4/](stl/remix/v4/) |
+| Fits sleeved cards | No: 92 mm inside, the height of a sleeve | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside |
+| Inside (W × D × H) | 68 × 35 × 92 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm |
+| Outside (W × D × H) | 76 × 43 × 96 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm |
+| Capacity | About 60 sleeved cards | Same | Same | Same | Same |
+| Hinge | Two small snap hinges | Five knuckles on a printed pin | Same as round 1 | Same as round 1 | Same as round 1 |
+| Supports | Tree supports | None | None | None | None |
+| Screen frame on the lid | 1.8 mm plate | 1.8 mm plate | 4 mm frame, flush inside | 4 mm frame, flush inside | 4 mm frame, flush inside |
+| Holds the lid shut | Friction only | Friction only | Two snap catches | Two snap catches | Two snap catches |
+| Grip for opening | The window | The window | Thumb notch under the lid | Thumb notch under the lid | Thumb notch under the lid |
+| Lid's inner edges | Square | Square | Lead-in chamfers | Lead-in chamfers | Lead-in chamfers |
+| Engraved in the bottom | "Ashwood" | "Ashwood" | "Ashwood" | "Yoojin", in script | "Yoojin", in script |
+| D-pad and buttons | The designer's: drawn the exact size of their seats, forced in | Same | Same | Same | Redrawn: 0.15 mm clearance, held by small ribs |
+| Parts to print | 5 | 6 (adds the pin) | 6 | 6 | 6 |
+| Test-printed | Yes, by the designer | No | No | No | No |
 
-The D-pad and buttons are the designer's in every version.
+The D-pad and buttons are the designer's up to round 3. Round 4 redraws the parts of them that sit inside the front wall so they push in by hand; the seats in the body are the same in every version, so the round-4 buttons also fit the earlier bodies and the original.
 
 ## Source
 
@@ -78,7 +79,7 @@ Photos from the MakerWorld listing, by Ashwood.
 
 ## Remix
 
-A modified version of Ashwood's box that fits sleeved cards, has a stronger hinge, and prints without supports. The depth is unchanged, so it still holds about 60 sleeved cards. A second round of changes makes the screen frame 4 mm thick, adds snap catches that hold the lid shut, a thumb notch for opening, and lead-in chamfers so the closing lid can't catch a card. A third round replaces the designer's signature engraved in the bottom with "Yoojin" in script. Every fix is documented in detail in [improvements.md](improvements.md).
+A modified version of Ashwood's box that fits sleeved cards, has a stronger hinge, and prints without supports. The depth is unchanged, so it still holds about 60 sleeved cards. A second round of changes makes the screen frame 4 mm thick, adds snap catches that hold the lid shut, a thumb notch for opening, and lead-in chamfers so the closing lid can't catch a card. A third round replaces the designer's signature engraved in the bottom with "Yoojin" in script. A fourth redraws the D-pad and buttons, which were the exact size of their seats and had to be forced in, so they push into the front by hand. Every fix is documented in detail in [improvements.md](improvements.md).
 
 ![Render of the remixed deckbox, closed, with the D-pad and buttons in place](images/remix/remix_front.png)
 
@@ -101,11 +102,12 @@ A modified version of Ashwood's box that fits sleeved cards, has a stronger hing
 | Opening | Nothing to grip but the window | Thumb notch under the lid's bottom edge |
 | Lid's inner edges | Square | Lead-in chamfers at the front, sides and back |
 | Engraved in the bottom | "Ashwood" in blackletter, 41 × 10 mm | "Yoojin" in script, 60 × 24 mm |
+| D-pad and buttons | The exact size of their seats; the designer suggests a butter knife to push Start and Select in | 0.15 mm clearance all round; the D-pad and A/B held by crush-rib pegs, Start and Select by a rib on each side |
 
 - The extra 4 mm of height is all in the lid, above the screen, so the screen still frames the same part of the card.
 - The extra width is 1 mm on each side, so the screen, D-pad and buttons stay where they were.
 - The front details and the lid's light friction fit along the side seams are unchanged.
-- The screen frame, catches, notch and chamfers are the second round of changes; see [improvements.md](improvements.md#round-2) sections 6 to 9. The engraving in the bottom is the third; see [section 10](improvements.md#10-signature-in-the-bottom).
+- The screen frame, catches, notch and chamfers are the second round of changes; see [improvements.md](improvements.md#round-2) sections 6 to 9. The engraving in the bottom is the third; see [section 10](improvements.md#10-signature-in-the-bottom). The buttons are the fourth; see [section 11](improvements.md#11-buttons).
 
 ![Render of the body from below, tipped back with its front edge at the top, showing "Yoojin" engraved in script across the bottom](images/remix/remix_bottom.png)
 
@@ -113,23 +115,26 @@ A modified version of Ashwood's box that fits sleeved cards, has a stronger hing
 
 | File | Print orientation |
 |---|---|
-| [Case-bottom_remix.stl](stl/remix/v3/Case-bottom_remix.stl) | Upright, open top facing up |
-| [Case-top_remix.stl](stl/remix/v3/Case-top_remix.stl) | Front face (screen bezel) on the bed |
-| [Hinge-pin_remix.stl](stl/remix/v3/Hinge-pin_remix.stl) | Lying on one of its flat sides |
+| [Case-bottom_remix.stl](stl/remix/v4/Case-bottom_remix.stl) | Upright, open top facing up |
+| [Case-top_remix.stl](stl/remix/v4/Case-top_remix.stl) | Front face (screen bezel) on the bed |
+| [Hinge-pin_remix.stl](stl/remix/v4/Hinge-pin_remix.stl) | Lying on one of its flat sides |
+| [D-Pad_remix.stl](stl/remix/v4/D-Pad_remix.stl) | Face down, peg up |
+| [Button_remix.stl](stl/remix/v4/Button_remix.stl) | Face down, peg up; print two (A and B) |
+| [StartSelect_remix.stl](stl/remix/v4/StartSelect_remix.stl) | Standing on its back face; print two |
 
-All three STLs are already oriented for printing. The D-pad and buttons are unchanged, so print them from [Case-GB.3mf](stl/original/Case-GB.3mf) or the original STLs. The earlier rounds are kept: [stl/remix/v2/](stl/remix/v2/) is the same box with Ashwood's signature in the bottom, and [stl/remix/v1/](stl/remix/v1/) is from before the screen frame, catches, notch and chamfers. Each folder has a README with its own file list and settings.
+All six STLs are already oriented for printing. The earlier rounds are kept: [stl/remix/v3/](stl/remix/v3/) is the same box with the designer's press-fit buttons, [stl/remix/v2/](stl/remix/v2/) has Ashwood's signature in the bottom, and [stl/remix/v1/](stl/remix/v1/) is from before the screen frame, catches, notch and chamfers. Each folder has a README with its own file list and settings.
 
 ### Recommended print settings
 
 Turn supports **off** for all three parts. Apart from the tops of small holes and the lid's back-wall bridge, no overhang is shallower than 45°. The second-round features need nothing extra: the thick screen frame lies on the bed, the catch grooves and chamfers are vertical or at 45°, and the notch and the catch beads on the body are small.
 
-| Setting | Body and lid | Hinge pin |
-|---|---|---|
-| Layer height | 0.2 mm, as in the original profile | 0.12–0.16 mm, so the pin comes out closer to size (easiest on its own plate) |
-| Walls | 2–3 | 2 |
-| Infill | 10–15% | 100% |
-| Brim | Not needed | Recommended: the pin rests on a flat side only 1 mm wide |
-| Material | PLA or PETG | PLA or PETG |
+| Setting | Body and lid | Hinge pin | D-pad and buttons |
+|---|---|---|---|
+| Layer height | 0.2 mm, as in the original profile | 0.12–0.16 mm, so the pin comes out closer to size (easiest on its own plate) | 0.12–0.16 mm, so the ribs come out true (put them on the pin's plate) |
+| Walls | 2–3 | 2 | 2 |
+| Infill | 10–15% | 100% | 100% |
+| Brim | Not needed | Recommended: the pin rests on a flat side only 1 mm wide | Start and Select: yes, they stand on a 5 × 2 mm footprint |
+| Material | PLA or PETG | PLA or PETG | PLA or PETG |
 
 - **Bridge:** the inside of the lid's back wall prints as one 70 mm bridge. It's hidden inside the lid and set back 1 mm, so a little sag can't touch the cards. If your printer bridges poorly (PETG often does), turn on thick bridges in the slicer.
 - **Engraving:** "Yoojin" is cut 1 mm into the face that sits on the bed, with its thinnest strokes 0.6 mm wide. A first layer squashed too hard closes them up, so level the bed and leave the slicer's elephant-foot compensation on.
@@ -149,6 +154,19 @@ Turn supports **off** for all three parts. Apart from the tops of small holes an
 | Catch bead on the body | Catch groove in the lid |
 |---|---|
 | ![Render of the body's side wall near the front, lid partly open, showing the small bead on the raised inner layer](images/remix/remix_latch_bead.png) | ![Cutaway render of the lid's side wall from inside, showing the groove in the outer layer below the chamfered inner layer](images/remix/remix_latch_groove.png) |
+
+### Fitting the buttons
+
+![Render of the body's front with the D-pad, the two A/B buttons and the two Start/Select buttons pulled out in front of their seats](images/remix/remix_buttons_exploded.png)
+
+The buttons go in before the lid. Each slides into its seat with 0.15 mm to spare and is held by small ribs that press in as it goes home:
+
+- **D-pad and A/B:** the peg on the back has four ribs that press into the 3 mm hole. Line the peg up with the hole and push with a thumb until the button sits flat in its seat. The D-pad only fits one way round.
+- **Start and Select:** a rib on each long side presses against the seat walls. They are small, so push them in with a fingertip or the flat of a knife until they stop on the seat floor, 2 mm in.
+- **Too tight:** the holes in the body print a little undersize on some machines. Run a 3 mm drill bit through the two peg holes, or lightly sand the ribs. **Too loose:** a drop of glue on the ribs.
+- The buttons can be pushed out again from inside the box, through the peg holes.
+
+The buttons' seats are the same in every version, so these buttons also fit the earlier bodies and the designer's.
 
 ### Hinge assembly
 

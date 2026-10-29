@@ -1,6 +1,6 @@
 # Expected printout
 
-Reference renders of the remix (grey = body, blue = lid, green = pin). Compare a print against these. Views 01 to 14 were made from the second round and look the same for the current third round, which changes only the bottom; view 15 shows the bottom of the third round. Renders made from the third-round files, with more views of the bottom, are in [stl/remix/v3/example_images/](../stl/remix/v3/example_images/).
+Reference renders of the remix (grey = body, blue = lid, green = pin). Compare a print against these. Views 01 to 14 were made from the second round, without the buttons, and the box has looked the same from these angles since; view 15 shows the bottom from round 3 on. The later rounds have their own renders: [stl/remix/v3/example_images/](../stl/remix/v3/example_images/) for the bottom, and [stl/remix/v4/example_images/](../stl/remix/v4/example_images/) for the current box with its buttons in place.
 
 | File | Shows |
 |---|---|

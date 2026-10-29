@@ -1,6 +1,6 @@
-# Remix, round 3 (current)
+# Remix, round 3
 
-The current remix of Ashwood's box. It is round 2 with "Yoojin" engraved in the bottom in place of the designer's signature: fits sleeved cards, five-knuckle hinge with a printed pin, prints without supports, 4 mm screen frame, snap catches, thumb notch and lead-in chamfers. Details are in [improvements.md](../../../improvements.md#round-3); printing and assembly are in the [main README](../../../README.md#remix).
+The third round of the remix of Ashwood's box. Round 4 in [../v4/](../v4/) is the current version: this box with a D-pad and buttons redrawn to push in by hand; the body, lid and pin are the same files. Round 3 is round 2 with "Yoojin" engraved in the bottom in place of the designer's signature: fits sleeved cards, five-knuckle hinge with a printed pin, prints without supports, 4 mm screen frame, snap catches, thumb notch and lead-in chamfers. Details are in [improvements.md](../../../improvements.md#round-3); printing and assembly are in the [main README](../../../README.md#remix).
 
 | File | Print orientation | What it is |
 |---|---|---|

@@ -1,6 +1,6 @@
 # Improvements to the Game Boy deck box
 
-This documents every change in the remix of Ashwood's [Pokemon tcg deckbox: Gameboy](https://makerworld.com/en/models/828343). It covers what was wrong with the original, what changed, and how the result was checked. The remix files are in [stl/remix/](stl/remix/v3/), and the [README](README.md#remix) covers printing and assembly. Sections 1 to 5 are the first round (fit, hinge, printing). Sections 6 to 9 are a [second round](#round-2) made on top of it, from feedback on the first; the first-round files are kept in [stl/remix/v1/](stl/remix/v1/). Section 10 is a [third round](#round-3) that changes only the signature engraved in the bottom; the second-round files, with Ashwood's signature, are kept in [stl/remix/v2/](stl/remix/v2/).
+This documents every change in the remix of Ashwood's [Pokemon tcg deckbox: Gameboy](https://makerworld.com/en/models/828343). It covers what was wrong with the original, what changed, and how the result was checked. The remix files are in [stl/remix/](stl/remix/v4/), and the [README](README.md#remix) covers printing and assembly. Sections 1 to 5 are the first round (fit, hinge, printing). Sections 6 to 9 are a [second round](#round-2) made on top of it, from feedback on the first; the first-round files are kept in [stl/remix/v1/](stl/remix/v1/). Section 10 is a [third round](#round-3) that changes only the signature engraved in the bottom; the second-round files, with Ashwood's signature, are kept in [stl/remix/v2/](stl/remix/v2/). Section 11 is a [fourth round](#round-4) that redraws the D-pad and buttons so they push in by hand; the third-round files, with the designer's buttons, are kept in [stl/remix/v3/](stl/remix/v3/).
 
 ## Summary
 
@@ -16,6 +16,7 @@ This documents every change in the remix of Ashwood's [Pokemon tcg deckbox: Game
 | 8 | The only grip for opening is the window, with the front card behind it | Thumb notch under the lid's bottom edge |
 | 9 | Square inner edges on the lid catch cards that sit at an angle | Lead-in chamfers all round the lid's inner rim |
 | 10 | The bottom is engraved with the designer's signature, "Ashwood" | "Yoojin" in script, engraved the same 1 mm deep |
+| 11 | The D-pad and buttons are drawn the exact size of their seats and have to be forced in | 0.15 mm of clearance, held by crush ribs on the pegs and on the Start/Select pills |
 
 ## 1. Interior height: 92 → 96 mm
 
@@ -91,9 +92,9 @@ The original STLs use Y as the up axis, so they import lying on their sides in a
 
 | File | Orientation |
 |---|---|
-| [Case-bottom_remix.stl](stl/remix/v3/Case-bottom_remix.stl) | Upright, open top facing up |
-| [Case-top_remix.stl](stl/remix/v3/Case-top_remix.stl) | Front face (screen bezel) on the bed |
-| [Hinge-pin_remix.stl](stl/remix/v3/Hinge-pin_remix.stl) | Lying on one of its flat sides |
+| [Case-bottom_remix.stl](stl/remix/v4/Case-bottom_remix.stl) | Upright, open top facing up |
+| [Case-top_remix.stl](stl/remix/v4/Case-top_remix.stl) | Front face (screen bezel) on the bed |
+| [Hinge-pin_remix.stl](stl/remix/v4/Hinge-pin_remix.stl) | Lying on one of its flat sides |
 
 ## Round 2
 
@@ -167,16 +168,35 @@ The third round changes one thing: the name engraved in the bottom of the body. 
 
 To engrave something else, replace the image (dark lettering on a light background) and adjust `WIDTH` and `MIN_STROKE` at the top of the script.
 
+## Round 4
+
+The fourth round changes only the D-pad and buttons. The body, lid and pin are the round-3 files. The script is [tools/round4_build.py](tools/round4_build.py).
+
+![Before and after sections of the buttons in their seats. Top row: the designer's D-pad fills its seat exactly; the round-4 D-pad has a 0.15 mm gap round the cross and a peg whose four ribs press in the hole, shown in cross-section. Bottom row: the designer's Start/Select pill fills its 2 mm seat; the round-4 pill has 0.15 mm clearance and a rib on each long side](images/remix/buttons_before_after.png)
+
+## 11. Buttons
+
+**Problem.** The D-pad, the two A/B buttons and the two Start/Select buttons are separate parts that push into seats in the front wall, and the designer drew each one the exact size of its seat: the D-pad's cross is 112.00 mm² in a 112.00 mm² pocket, the 8.00 mm A/B caps go into 7.99 mm pockets, the Start/Select pills have 0.02 mm a side in theirs, and the 2.95 mm pegs have 0.02 mm a side in their 2.99 mm holes. A printed part comes out a little bigger than drawn and a printed hole a little smaller, so every button is a forced fit over its whole perimeter. Start and Select, which have no peg and are held by friction alone in a 2 mm deep pocket, are the worst: the designer's own assembly note recommends a butter knife to push them in.
+
+**Fix.** The parts of each button that sit inside the front wall are redrawn. Everything in front of the face is the designer's shape, so the box looks the same.
+
+- **Clearance:** the cross, the caps and the pills are 0.15 mm smaller than their seats all round, so they slide in. The cross's outer corners are rounded to 0.3 mm, because a printed pocket's inside corners are never sharp.
+- **D-pad and A/B pegs:** a 2.6 mm core, 0.2 mm clear of the 2.99 mm hole, with four 0.5 mm wide ribs on the diagonals that stand 0.055 mm proud of the hole (0.08 mm at their corners). Only the ribs press, so the peg goes in with a thumb and the ribs take up the printer's error. They sit on the diagonals to stay clear of the top of the hole, which sags a little when the body is printed upright. The tip and the ribs are chamfered as lead-ins, and the peg still stops 0.1 mm short of the wall's inner face.
+- **Start and Select:** a rib 0.8 mm wide on each long side, 0.06 mm proud of the designer's outline (0.04 mm proud of the seat), with a lead-in. The pill still seats on the pocket floor, 2 mm in.
+- **Printing:** the D-pad and A/B print face down with the peg up, and Start/Select stand on their back faces, as the designer printed them, so the ribs are built up along their length and come out true. Both orientations are plain rotations of the designer's files, nothing is mirrored.
+
+**Result.** In the model, the only places a button touches the body are the ribs: 0.2 mm³ of overlap per peg and 0.07 mm³ per pill, where the designer's A/B caps overlap their pockets by 0.045 mm³ and everything else is line to line. In front of the face the new parts differ from the designer's by less than 0.001 mm³. The seats in the body are untouched, so the new buttons also fit the round-1 to round-3 bodies and the designer's. The fit has not been test-printed: if a peg won't go in, the holes printed small, so run a 3 mm drill through them or sand the ribs; if a button is loose, glue the ribs.
+
 ## What didn't change
 
 - **Depth:** still 35 mm inside, so the box holds about 60 single-sleeved or about 50 double-sleeved cards.
 - **Front details:** the screen, bezel, D-pad recess, button holes and speaker grille.
-- **Buttons and D-pad:** unchanged. Print them from [Case-GB.3mf](stl/original/Case-GB.3mf) or the original STLs.
+- **Button tops:** the visible parts of the D-pad and buttons are the designer's shapes. Round 4 changes only what sits inside the front wall, and the seats in the body are untouched.
 - **Lid friction fit:** the lid and body overlap by 0.05 mm along the side seams, which acts as a light friction fit. The closed lid overlaps the body by 10.0 mm³, down from the original's 11.2 mm³ only because the catch grooves take a little of that strip away.
 
 ## Verification
 
-These checks were run on the finished second-round models; the round-3 body was checked again for the last row. The remix hasn't been test-printed yet.
+These checks were run on the finished second-round models; the round-3 body and the round-4 buttons were checked for the last two rows. The remix hasn't been test-printed yet.
 
 | Check | Result |
 |---|---|
@@ -190,6 +210,7 @@ These checks were run on the finished second-round models; the round-3 body was 
 | Interior | 70.0 × 35.0 × 96.0 mm (W × D × H); the inside of the front wall is one plane from the floor to 93.5 mm |
 | Overhangs in print orientation | Only the features listed in section 4; the lid's bridge is 1.5 mm narrower, the body gains 2 mm² under the beads |
 | Signature (round 3) | Watertight; the body differs from round 2 only below 1 mm; the engraving's walls are vertical, its strokes 0.6–1.8 mm wide, its inside corners rounded to 0.2 mm, its loops 1.3–5.9 mm across, and it is 6.9 mm clear of the edge of the flat face |
+| Buttons (round 4) | Watertight; identical to the designer's in front of the face (under 0.001 mm³); 0.15 mm clear of their seats; only the ribs overlap the body, 0.2 mm³ per peg and 0.07 mm³ per pill; the pegs stop 0.1 mm short of the wall's inner face |
 
 ## Known limitations
 
@@ -197,6 +218,7 @@ These checks were run on the finished second-round models; the round-3 body was 
 - **Pin fit:** the press fit depends on how accurately your printer makes small holes and rods. If the pin is too tight, scale its width and height (not its length) to 97% in the slicer, or run a 2.8 mm drill bit through the body knuckles. If it's loose, scale those to 102% or glue the head.
 - **Color:** STLs carry no color. The original 3MF paints the bezel black, so repaint it in Bambu Studio.
 - **Engraving:** the thinnest strokes of "Yoojin" are 0.6 mm, about one and a half nozzle widths, in the face printed on the bed. A first layer squashed too hard, or printed without elephant-foot compensation, can close them up.
+- **Button fit:** the ribs press only 0.05–0.08 mm, sized for the usual shrink of a printed hole. A printer that makes holes true to size will hold the buttons more lightly (glue them); one that makes them small needs the two peg holes opened with a 3 mm drill.
 - **One bridge:** the lid's back wall is a 70 mm bridge. It's hidden and set back from the cards, but printers that bridge poorly will leave it rough.
 - **Capacity:** at 35 mm deep the box doesn't hold 100 double-sleeved or 120 single-sleeved cards. A 72 mm-deep version (70 × 72 × 96 mm inside) was built and checked during this work, but it wasn't exported.
 
@@ -209,3 +231,4 @@ There's no CAD source for the original, so the changes were made directly on Ash
 - **Checks:** each part was re-checked after every change for watertightness, fit, hinge clearance, interior size and overhangs.
 - **Round 2:** the frame, catches, notch and chamfers were added the same way, as boolean unions and cuts on the first-round meshes. The script is [tools/round2_build.py](tools/round2_build.py); it reads [stl/remix/v1/](stl/remix/v1/) and writes [stl/remix/](stl/remix/v2/).
 - **Round 3:** Ashwood's recess was filled with a boolean union and the new lettering cut with a boolean difference. The lettering's outline is traced from the image at 0.01 mm per pixel, after widening the hairlines and rounding the inside corners. The script is [tools/round3_build.py](tools/round3_build.py); it reads [stl/remix/v2/](stl/remix/v2/) and the image and writes [stl/remix/v3/](stl/remix/v3/).
+- **Round 4:** each button is the designer's part cut off at the front face, with a new base extruded from the seat's outline offset inward, and a new peg or ribs built from primitives and unioned on. The script is [tools/round4_build.py](tools/round4_build.py); it reads [stl/original/](stl/original/) and [stl/remix/v3/](stl/remix/v3/) and writes [stl/remix/v4/](stl/remix/v4/).
