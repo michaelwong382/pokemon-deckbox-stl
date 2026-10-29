@@ -1,13 +1,13 @@
 """Round-2 remix of the Game Boy deck box: thick screen frame, snap catches, thumb notch, lead-in chamfers.
 Run from the repo root: python tools/round2_build.py   (needs trimesh, manifold3d, shapely, numpy)
-Reads the first-round STLs from stl/remix/v1/ and writes the new lid and body to stl/remix/.
+Reads the first-round STLs from stl/remix/v1/ and writes the new lid and body to stl/remix/v2/.
 Lid coords (print orientation): X = box width (box Y = -X), Y = box height (box Z = Y + 71.82), Z = depth from front face (box X = 25.2 - Z).
 Body coords (print orientation): X = depth (front face at +25.2), Y = width, Z = up.
 """
 import trimesh, numpy as np, shapely.geometry as sg, shapely.affinity as sa, shapely.ops as so
 from trimesh.creation import extrude_polygon
 R="stl/remix/v1/"      # first-round files (input)
-OUT="stl/remix/"       # second-round files (output)
+OUT="stl/remix/v2/"    # second-round files (output)
 import os; os.makedirs(OUT,exist_ok=True)
 lid=trimesh.load(R+"Case-top_remix.stl",force='mesh')
 body=trimesh.load(R+"Case-bottom_remix.stl",force='mesh')

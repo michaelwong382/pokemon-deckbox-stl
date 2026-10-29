@@ -10,7 +10,7 @@ Three sets of files live in [stl/](stl/), each with its own README. Print the cu
 
 | | Original by Ashwood | Remix round 1 | Remix round 2 (current) |
 |---|---|---|---|
-| Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/](stl/remix/) |
+| Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/](stl/remix/v2/) |
 | Fits sleeved cards | No: 92 mm inside, the height of a sleeve | Yes: 96 mm inside | Yes: 96 mm inside |
 | Inside (W × D × H) | 68 × 35 × 92 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm |
 | Outside (W × D × H) | 76 × 43 × 96 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm |
@@ -109,9 +109,9 @@ A modified version of Ashwood's box that fits sleeved cards, has a stronger hing
 
 | File | Print orientation |
 |---|---|
-| [Case-bottom_remix.stl](stl/remix/Case-bottom_remix.stl) | Upright, open top facing up |
-| [Case-top_remix.stl](stl/remix/Case-top_remix.stl) | Front face (screen bezel) on the bed |
-| [Hinge-pin_remix.stl](stl/remix/Hinge-pin_remix.stl) | Lying on one of its flat sides |
+| [Case-bottom_remix.stl](stl/remix/v2/Case-bottom_remix.stl) | Upright, open top facing up |
+| [Case-top_remix.stl](stl/remix/v2/Case-top_remix.stl) | Front face (screen bezel) on the bed |
+| [Hinge-pin_remix.stl](stl/remix/v2/Hinge-pin_remix.stl) | Lying on one of its flat sides |
 
 All three STLs are already oriented for printing. The D-pad and buttons are unchanged, so print them from [Case-GB.3mf](stl/original/Case-GB.3mf) or the original STLs. The first-round files, before the screen frame, catches, notch and chamfers, are kept in [stl/remix/v1/](stl/remix/v1/). Each folder has a README with its own file list and settings.
 
