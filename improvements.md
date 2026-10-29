@@ -1,6 +1,6 @@
 # Improvements to the Game Boy deck box
 
-This documents every change in the remix of Ashwood's [Pokemon tcg deckbox: Gameboy](https://makerworld.com/en/models/828343). It covers what was wrong with the original, what changed, and how the result was checked. The remix files are in [stl/remix/](stl/remix/v4/), and the [README](README.md#remix) covers printing and assembly. Sections 1 to 5 are the first round (fit, hinge, printing). Sections 6 to 9 are a [second round](#round-2) made on top of it, from feedback on the first; the first-round files are kept in [stl/remix/v1/](stl/remix/v1/). Section 10 is a [third round](#round-3) that changes only the signature engraved in the bottom; the second-round files, with Ashwood's signature, are kept in [stl/remix/v2/](stl/remix/v2/). Section 11 is a [fourth round](#round-4) that redraws the D-pad and buttons so they push in by hand; the third-round files, with the designer's buttons, are kept in [stl/remix/v3/](stl/remix/v3/).
+This documents every change in the remix of Ashwood's [Pokemon tcg deckbox: Gameboy](https://makerworld.com/en/models/828343). It covers what was wrong with the original, what changed, and how the result was checked. The remix files are in [stl/remix/](stl/remix/v5/), and the [README](README.md#remix) covers printing and assembly. Sections 1 to 5 are the first round (fit, hinge, printing). Sections 6 to 9 are a [second round](#round-2) made on top of it, from feedback on the first; the first-round files are kept in [stl/remix/v1/](stl/remix/v1/). Section 10 is a [third round](#round-3) that changes only the signature engraved in the bottom; the second-round files, with Ashwood's signature, are kept in [stl/remix/v2/](stl/remix/v2/). Section 11 is a [fourth round](#round-4) that redraws the D-pad and buttons so they push in by hand; the third-round files, with the designer's buttons, are kept in [stl/remix/v3/](stl/remix/v3/). Sections 12 to 14 are a [fifth round](#round-5): a shallower engraving with no tiny islands, the pin head recessed into the hinge, and three fit-test coupons; the fourth-round files are kept in [stl/remix/v4/](stl/remix/v4/).
 
 ## Summary
 
@@ -17,6 +17,9 @@ This documents every change in the remix of Ashwood's [Pokemon tcg deckbox: Game
 | 9 | Square inner edges on the lid catch cards that sit at an angle | Lead-in chamfers all round the lid's inner rim |
 | 10 | The bottom is engraved with the designer's signature, "Ashwood" | "Yoojin" in script, engraved the same 1 mm deep |
 | 11 | The D-pad and buttons are drawn the exact size of their seats and have to be forced in | 0.15 mm of clearance, held by crush ribs on the pegs and on the Start/Select pills |
+| 12 | The engraving's two smallest loops are 1.3 mm islands of first layer, 1 mm tall, that a nozzle can knock off | Engraving 0.8 mm deep with loops under 3 mm² filled: no island under 2.4 mm |
+| 13 | The pin's head stands 1.5 mm proud of the hinge | 4 mm round head, flush in a recess in the end knuckle; knock-out hole at the other end |
+| 14 | Every press fit depends on the printer, and finding out takes a five-hour body print | Three coupons cut from the real files test the buttons and the hinge in under an hour |
 
 ## 1. Interior height: 92 → 96 mm
 
@@ -187,16 +190,59 @@ The fourth round changes only the D-pad and buttons. The body, lid and pin are t
 
 **Result.** In the model, the only places a button touches the body are the ribs: 0.2 mm³ of overlap per peg and 0.07 mm³ per pill, where the designer's A/B caps overlap their pockets by 0.045 mm³ and everything else is line to line. In front of the face the new parts differ from the designer's by less than 0.001 mm³. The seats in the body are untouched, so the new buttons also fit the round-1 to round-3 bodies and the designer's. The fit has not been test-printed: if a peg won't go in, the holes printed small, so run a 3 mm drill through them or sand the ribs; if a button is loose, glue the ribs.
 
+## Round 5
+
+The fifth round changes the body's bottom 0.8 mm and the two end knuckles of its hinge, replaces the pin, and adds three test pieces. The lid, D-pad and buttons are the round-4 files, byte for byte. The script is [tools/round5_build.py](tools/round5_build.py).
+
+## 12. Engraving that survives the first layer
+
+**Problem.** The round-3 engraving is in the face that sits on the bed, 1 mm deep. Each closed loop in the lettering leaves an island of solid material standing on the bed, surrounded by the groove, and joined to the body only once the groove's ceiling bridges over it five layers up. Four of the six loops are 2.5 to 5.9 mm across and safe. The two small loops at the tops of the o's are 1.9 mm², 1.3 mm across: a dot of first layer, one and a half line widths wide, that the nozzle crosses on every layer above it. A dot like that can lift or get dragged into the groove, leaving a blob where the loop was.
+
+**Fix.** The lettering is traced exactly as in round 3 (same image, 60 mm wide, hairlines widened to 0.6 mm, inside corners rounded to 0.2 mm), then any enclosed loop under 3 mm² is filled before the outline is cut. Only the two small loops qualify; the o's themselves stay open. The engraving is also 0.8 mm deep instead of 1.0, four layers instead of five, which lowers the remaining islands and leaves 1.2 mm of floor under the cards instead of 1.0. The depth was the only reason to touch the rest of the lettering, and it is otherwise unchanged: same centre, same size, same stroke widths.
+
+**Result.** The engraved area is 175.3 mm² (171.5 plus the two filled loops), its ceiling a single flat plane at 0.8 mm, and the smallest island is now 2.45 mm across. 39 % of the engraved area is still the 0.6 mm hairline, so the slicer's elephant-foot compensation still matters. Against round 4 the body gains 34.3 mm³ (0.2 mm across the whole engraving) and loses 3.0 mm³ where the two loops were.
+
+![Close-up render of the engraving from a low angle, showing the 0.8 mm deep strokes of "Yoo" with the small loops at the tops of the o's filled](stl/remix/v5/example_images/17_engraving_close_up.png)
+
+## 13. Pin head recessed into the hinge
+
+**Problem.** Round 1's pin has a 5 × 3.75 mm block head that stops against the end of the left knuckle and stands 1.5 mm proud of it: a small nub on the back of the box that catches on things and is the first part to get knocked.
+
+**Fix.** The head is sunk into the knuckle. That needs a smaller head: the knuckle is 3 mm in radius, and a recess for the old head's 5 mm width with 0.15 mm of clearance would leave 0.35 mm of wall at its bottom corners. The round-5 pin has a 4 mm round head with a flat bottom, in line with the shank's flat side, so it still prints lying on its side without support; it is 1.7 mm long. The left knuckle gets a matching recess, 4.3 mm in diameter and 1.72 mm deep with the same flat, which leaves 0.85 mm of wall around it, two perimeters, and a 0.2 mm lead-in from the recess floor into the 2.8 mm hole. The head seats on the floor of the recess and finishes 0.02 mm inside the end of the knuckle.
+
+The right-hand hole was blind, closed by 1.2 mm of knuckle, and round 1's pin ended 0.3 mm short of it. Seating the head 1.7 mm deeper would have driven the tail into that wall, so the pin is 1.5 mm shorter, 58.5 mm, with its tail where it was. A head that sits flush gives nothing to pull on, so the blind end gets a 1.6 mm hole along the axis: a straightened paperclip pushes the pin out from that side. The pin is too fat to come out that way, so the hole changes nothing about how the pin sits.
+
+![Before and after: the left end of the hinge seen from behind. Left: round 4, the block head standing out from the knuckle. Right: round 5, the round head flush in its recess](images/remix/pin_head_before_after.png)
+
+**Result.** Seated, the pin overlaps nothing, its head has 0.15 mm all round and rests on the recess floor, its tail is 0.3 mm from the blind end, and its shank keeps round 1's 0.05 mm clearance in the body knuckles. A 1.5 mm rod passes the knock-out hole and reaches the tail. The lid's opening sweep against the new body is identical to round 4 at every angle checked, and the body's overhangs grow by 8 mm², the tops of the recess and the knock-out hole. The pin still has no overhang beyond 45°.
+
+## 14. Fit-test coupons
+
+**Problem.** The buttons are held by ribs that press 0.04 to 0.08 mm, the pin by a 0.05 mm clearance that a printer turns into a press fit: all of it inside the usual error of a printed hole, and all of it in a body that takes about five hours to print. The remedies (a 3 mm drill through the peg holes, a 2.8 mm drill through the knuckles, 97 % or 102 % on the pin, glue) are cheap, but only if you know which one you need before the long print.
+
+**Fix.** Three coupons are cut out of the finished round-5 meshes, so their seats and knuckles are exactly the box's:
+
+- **Test-seats:** the front wall between 5.5 and 39 mm up, 57 mm wide, at its full 4 mm thickness, with all five button seats, the lower end of the thumb notch and the speaker grille, on a 2 mm foot. 57 × 8 × 35 mm, 8.1 cm³. Prints upright, as the body does, so the seats' overhangs and the peg holes' sag come out the same.
+- **Test-hinge-body:** the back wall from 74 mm up with the three body knuckles, the recess and the knock-out hole, on a 2 mm foot 20 mm deep so the knuckles can't tip it over. 66 × 20 × 16 mm, 7.1 cm³. Prints upright.
+- **Test-hinge-lid:** everything of the lid above 40 mm in its print orientation: its back wall with the two lid knuckles and their support chamfers, 78 × 18 × 10 mm, 3.8 cm³. Prints on the cut face.
+
+With the pin and one of each button, that is about 20 cm³, against 90 cm³ for the body and lid.
+
+**Result.** On the meshes, the buttons overlap the seats coupon exactly as they do the body (0.205 mm³ per peg, 0.072 mm³ per pill), the two hinge strips and the pin assemble with zero overlap, and the lid strip swings freely to 160° before it meets the foot. The coupons' only overhangs are the features they inherit: the seat roofs, the knuckle chamfers and the tops of the small holes.
+
+![Render of the three coupons and the small parts laid out on a bed in print orientation](stl/remix/v5/example_images/22_test_coupons_as_printed.png)
+
 ## What didn't change
 
 - **Depth:** still 35 mm inside, so the box holds about 60 single-sleeved or about 50 double-sleeved cards.
 - **Front details:** the screen, bezel, D-pad recess, button holes and speaker grille.
 - **Button tops:** the visible parts of the D-pad and buttons are the designer's shapes. Round 4 changes only what sits inside the front wall, and the seats in the body are untouched.
+- **Lid and buttons from round 4 on:** round 5 copies the round-4 lid, D-pad and buttons byte for byte; the body changes only in its bottom 0.8 mm and inside the hinge's two end knuckles.
 - **Lid friction fit:** the lid and body overlap by 0.05 mm along the side seams, which acts as a light friction fit. The closed lid overlaps the body by 10.0 mm³, down from the original's 11.2 mm³ only because the catch grooves take a little of that strip away.
 
 ## Verification
 
-These checks were run on the finished second-round models; the round-3 body and the round-4 buttons were checked for the last two rows. The remix hasn't been test-printed yet.
+These checks were run on the finished second-round models; the round-3 body, the round-4 buttons and the round-5 body, pin and coupons were checked for the last five rows. The remix hasn't been test-printed yet.
 
 | Check | Result |
 |---|---|
@@ -211,13 +257,17 @@ These checks were run on the finished second-round models; the round-3 body and 
 | Overhangs in print orientation | Only the features listed in section 4; the lid's bridge is 1.5 mm narrower, the body gains 2 mm² under the beads |
 | Signature (round 3) | Watertight; the body differs from round 2 only below 1 mm; the engraving's walls are vertical, its strokes 0.6–1.8 mm wide, its inside corners rounded to 0.2 mm, its loops 1.3–5.9 mm across, and it is 6.9 mm clear of the edge of the flat face |
 | Buttons (round 4) | Watertight; identical to the designer's in front of the face (under 0.001 mm³); 0.15 mm clear of their seats; only the ribs overlap the body, 0.2 mm³ per peg and 0.07 mm³ per pill; the pegs stop 0.1 mm short of the wall's inner face |
+| Engraving (round 5) | Watertight; the body differs from round 4 only below 0.8 mm and inside the end knuckles; the ceiling is one plane at 0.8 mm; 175.3 mm², smallest island 2.45 mm across, strokes 0.6–1.8 mm |
+| Pin and recess (round 5) | Seated pin overlaps neither body nor lid; head on the recess floor with 0.15 mm round it; tail 0.3 mm from the blind end; a 1.5 mm rod passes the knock-out hole to the tail; 0.85 mm of knuckle wall round the recess; lid sweep identical to round 4 from 0° to 210° |
+| Coupons (round 5) | Watertight; the buttons overlap the seats coupon exactly as the body (0.205 and 0.072 mm³); the hinge strips and pin assemble with zero overlap and swing freely to 160°; overhangs are only the inherited features |
 
 ## Known limitations
 
 - **Catch stiffness:** the beads are 0.3 mm tall, so 0.1 mm either way on the print changes the click a lot. Sand the beads if the lid is hard to open; build them up with paint or glue if it doesn't click.
-- **Pin fit:** the press fit depends on how accurately your printer makes small holes and rods. If the pin is too tight, scale its width and height (not its length) to 97% in the slicer, or run a 2.8 mm drill bit through the body knuckles. If it's loose, scale those to 102% or glue the head.
+- **Pin fit:** the press fit depends on how accurately your printer makes small holes and rods. If the pin is too tight, scale its width and height (not its length) to 97% in the slicer, or run a 2.8 mm drill bit through the body knuckles. If it's loose, scale those to 102% or glue the head. The head sits flush in its recess, so to remove the pin push it out through the 1.6 mm hole at the other end.
+- **Coupons:** they test the button seats and the hinge. The snap catches and the lid's friction fit need the full parts.
 - **Color:** STLs carry no color. The original 3MF paints the bezel black, so repaint it in Bambu Studio.
-- **Engraving:** the thinnest strokes of "Yoojin" are 0.6 mm, about one and a half nozzle widths, in the face printed on the bed. A first layer squashed too hard, or printed without elephant-foot compensation, can close them up.
+- **Engraving:** the thinnest strokes of "Yoojin" are 0.6 mm, about one and a half nozzle widths, in the face printed on the bed, 0.8 mm deep. A first layer squashed too hard, or printed without elephant-foot compensation, can close them up.
 - **Button fit:** the ribs press only 0.05–0.08 mm, sized for the usual shrink of a printed hole. A printer that makes holes true to size will hold the buttons more lightly (glue them); one that makes them small needs the two peg holes opened with a 3 mm drill.
 - **One bridge:** the lid's back wall is a 70 mm bridge. It's hidden and set back from the cards, but printers that bridge poorly will leave it rough.
 - **Capacity:** at 35 mm deep the box doesn't hold 100 double-sleeved or 120 single-sleeved cards. A 72 mm-deep version (70 × 72 × 96 mm inside) was built and checked during this work, but it wasn't exported.
@@ -232,3 +282,4 @@ There's no CAD source for the original, so the changes were made directly on Ash
 - **Round 2:** the frame, catches, notch and chamfers were added the same way, as boolean unions and cuts on the first-round meshes. The script is [tools/round2_build.py](tools/round2_build.py); it reads [stl/remix/v1/](stl/remix/v1/) and writes [stl/remix/](stl/remix/v2/).
 - **Round 3:** Ashwood's recess was filled with a boolean union and the new lettering cut with a boolean difference. The lettering's outline is traced from the image at 0.01 mm per pixel, after widening the hairlines and rounding the inside corners. The script is [tools/round3_build.py](tools/round3_build.py); it reads [stl/remix/v2/](stl/remix/v2/) and the image and writes [stl/remix/v3/](stl/remix/v3/).
 - **Round 4:** each button is the designer's part cut off at the front face, with a new base extruded from the seat's outline offset inward, and a new peg or ribs built from primitives and unioned on. The script is [tools/round4_build.py](tools/round4_build.py); it reads [stl/original/](stl/original/) and [stl/remix/v3/](stl/remix/v3/) and writes [stl/remix/v4/](stl/remix/v4/).
+- **Round 5:** the round-4 engraving was filled with a boolean union and the lettering cut again from the same trace, 0.8 mm deep, with the loops under 3 mm² filled in the traced image first. The recess, its lead-in and the knock-out hole are boolean cuts in the knuckles; the pin is drawn afresh as a convex hull (the octagonal shank with its tail chamfer) with a sliced cylinder for the head. The coupons are boolean intersections of the finished body and lid with boxes, plus a box foot. The script is [tools/round5_build.py](tools/round5_build.py); it reads [stl/remix/v4/](stl/remix/v4/) and the image and writes [stl/remix/v5/](stl/remix/v5/).
