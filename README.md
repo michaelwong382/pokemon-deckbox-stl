@@ -10,7 +10,7 @@ Three sets of files live in [stl/](stl/), each with its own README. Print the cu
 
 | | Original by Ashwood | Remix round 1 | Remix round 2 (current) |
 |---|---|---|---|
-| Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/](stl/remix/v2/) |
+| Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/v2/](stl/remix/v2/) |
 | Fits sleeved cards | No: 92 mm inside, the height of a sleeve | Yes: 96 mm inside | Yes: 96 mm inside |
 | Inside (W × D × H) | 68 × 35 × 92 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm |
 | Outside (W × D × H) | 76 × 43 × 96 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm |
