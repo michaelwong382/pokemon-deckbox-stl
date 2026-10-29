@@ -1,6 +1,6 @@
 # Expected printout
 
-Reference renders of the second-round remix (grey = body, blue = lid, green = pin). Compare a print against these.
+Reference renders of the remix (grey = body, blue = lid, green = pin). Compare a print against these. Views 01 to 14 were made from the second round and look the same for the current third round, which changes only the bottom; view 15 shows the bottom of the third round. Renders made from the third-round files, with more views of the bottom, are in [stl/remix/v3/example_images/](../stl/remix/v3/example_images/).
 
 | File | Shows |
 |---|---|
@@ -18,3 +18,4 @@ Reference renders of the second-round remix (grey = body, blue = lid, green = pi
 | 12_lid_as_printed_face_down.png | Lid on the bed, front face down |
 | 13_body_as_printed_upright.png | Body on the bed, upright |
 | 14_pin_as_printed_on_flat_side.png | Pin on the bed, lying on a flat side, head at one end |
+| 15_bottom_signature.png | Body from below, tipped back with the front edge at the top: "Yoojin" engraved across the bottom (engraving shaded darker) |

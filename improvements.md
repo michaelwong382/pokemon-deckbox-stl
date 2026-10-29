@@ -1,6 +1,6 @@
 # Improvements to the Game Boy deck box
 
-This documents every change in the remix of Ashwood's [Pokemon tcg deckbox: Gameboy](https://makerworld.com/en/models/828343). It covers what was wrong with the original, what changed, and how the result was checked. The remix files are in [stl/remix/](stl/remix/v2/), and the [README](README.md#remix) covers printing and assembly. Sections 1 to 5 are the first round (fit, hinge, printing). Sections 6 to 9 are a [second round](#round-2) made on top of it, from feedback on the first; the first-round files are kept in [stl/remix/v1/](stl/remix/v1/).
+This documents every change in the remix of Ashwood's [Pokemon tcg deckbox: Gameboy](https://makerworld.com/en/models/828343). It covers what was wrong with the original, what changed, and how the result was checked. The remix files are in [stl/remix/](stl/remix/v3/), and the [README](README.md#remix) covers printing and assembly. Sections 1 to 5 are the first round (fit, hinge, printing). Sections 6 to 9 are a [second round](#round-2) made on top of it, from feedback on the first; the first-round files are kept in [stl/remix/v1/](stl/remix/v1/). Section 10 is a [third round](#round-3) that changes only the signature engraved in the bottom; the second-round files, with Ashwood's signature, are kept in [stl/remix/v2/](stl/remix/v2/).
 
 ## Summary
 
@@ -15,6 +15,7 @@ This documents every change in the remix of Ashwood's [Pokemon tcg deckbox: Game
 | 7 | Nothing holds the lid shut | Two snap catches in the side seams |
 | 8 | The only grip for opening is the window, with the front card behind it | Thumb notch under the lid's bottom edge |
 | 9 | Square inner edges on the lid catch cards that sit at an angle | Lead-in chamfers all round the lid's inner rim |
+| 10 | The bottom is engraved with the designer's signature, "Ashwood" | "Yoojin" in script, engraved the same 1 mm deep |
 
 ## 1. Interior height: 92 → 96 mm
 
@@ -90,9 +91,9 @@ The original STLs use Y as the up axis, so they import lying on their sides in a
 
 | File | Orientation |
 |---|---|
-| [Case-bottom_remix.stl](stl/remix/v2/Case-bottom_remix.stl) | Upright, open top facing up |
-| [Case-top_remix.stl](stl/remix/v2/Case-top_remix.stl) | Front face (screen bezel) on the bed |
-| [Hinge-pin_remix.stl](stl/remix/v2/Hinge-pin_remix.stl) | Lying on one of its flat sides |
+| [Case-bottom_remix.stl](stl/remix/v3/Case-bottom_remix.stl) | Upright, open top facing up |
+| [Case-top_remix.stl](stl/remix/v3/Case-top_remix.stl) | Front face (screen bezel) on the bed |
+| [Hinge-pin_remix.stl](stl/remix/v3/Hinge-pin_remix.stl) | Lying on one of its flat sides |
 
 ## Round 2
 
@@ -146,17 +147,36 @@ The catches sit 17 mm behind the front face and 76 mm up, in the front half of t
 
 **Result.** The chamfers remove square edges only; the interior is still 70.0 × 35.0 × 96.0 mm, measured by ray casts at 12 points, and the lid still clears the body through the whole swing.
 
+## Round 3
+
+The third round changes one thing: the name engraved in the bottom of the body. The lid and pin are the round-2 files, unchanged, and nothing in the body moves except its bottom 1 mm. The script is [tools/round3_build.py](tools/round3_build.py).
+
+![Before and after: the bottom of the body seen from below, front edge at the top. Left: "Ashwood" in blackletter, 41 × 10 mm. Right: "Yoojin" in script, 60 × 24 mm, centred on the flat face](images/remix/signature_before_after.png)
+
+## 10. Signature in the bottom
+
+**Change.** The bottom carried the designer's signature, "Ashwood" in blackletter, engraved 1 mm deep. That recess is filled in, and "Yoojin" is engraved in its place, traced from [images/Elegant_Yoojin_Calligraphy.png](images/Elegant_Yoojin_Calligraphy.png). Ashwood is still credited as the designer in the [README](README.md), and the round-2 files keep the original signature.
+
+**Size and placement.** The lettering is 60 × 24 mm, centred on the flat part of the bottom (74 × 39 mm inside the 2 mm rounded edge) and at least 6.9 mm from the edge of it. At that size the o's are 5.7 mm tall, close to Ashwood's 6.0 mm. It reads the right way round when the box is tipped back so the bottom faces you with the front edge at the top, as the old signature did. It is 1 mm deep, like the old one, which leaves 1 mm of floor under the cards.
+
+**Stroke width.** Scaled to 60 mm, the thick strokes in the drawing are about 1 mm wide, but the hairlines that join the letters and form the swashes are only 0.3 mm, narrower than the line a 0.4 mm nozzle lays down. The engraving is in the face that sits on the bed, where the first layer is squashed flat and closes gaps that narrow, so the word would print as disconnected thick strokes. Every stroke thinner than 0.6 mm was therefore widened to 0.6 mm, evenly on both sides of its centre line, and the thick strokes were left as drawn. That adds 28 mm² to the 142 mm² traced from the drawing: the hairlines are bolder than in the drawing, but every letter keeps its shape.
+
+**Smoothing.** Widening leaves small steps where a widened hairline meets a thick stroke, and where two strokes join, the material between them runs out into a needle-thin wedge that no nozzle can print. Every inside corner of the outline was rounded to a 0.2 mm radius, which smooths both and adds another 1.6 mm². Strokes and outside curves stay where they were, and no gap between strokes closes up.
+
+**Result.** The engraving has vertical walls and a flat ceiling 1 mm up, and its strokes are 0.6 to 1.8 mm wide, the widest where strokes join. The six enclosed loops stay open as islands of solid material: the small loops at the tops of the o's are 1.3 mm across, the o's themselves 2.5 mm, and the loops in the tails of the j and the Y 2.5 and 5.9 mm. Ashwood's recess is completely filled: compared with round 2, the body gains 86.2 mm³ where "Ashwood" was and loses 133.7 mm³ where "Yoojin" is, all in its bottom 1 mm. Like the old signature, the ceiling of the engraving prints as short bridges, here at most 1.8 mm across, so supports stay off.
+
+To engrave something else, replace the image (dark lettering on a light background) and adjust `WIDTH` and `MIN_STROKE` at the top of the script.
+
 ## What didn't change
 
 - **Depth:** still 35 mm inside, so the box holds about 60 single-sleeved or about 50 double-sleeved cards.
 - **Front details:** the screen, bezel, D-pad recess, button holes and speaker grille.
 - **Buttons and D-pad:** unchanged. Print them from [Case-GB.3mf](stl/original/Case-GB.3mf) or the original STLs.
-- **Signature:** Ashwood's name on the bottom.
 - **Lid friction fit:** the lid and body overlap by 0.05 mm along the side seams, which acts as a light friction fit. The closed lid overlaps the body by 10.0 mm³, down from the original's 11.2 mm³ only because the catch grooves take a little of that strip away.
 
 ## Verification
 
-These checks were run on the finished second-round models. The remix hasn't been test-printed yet.
+These checks were run on the finished second-round models; the round-3 body was checked again for the last row. The remix hasn't been test-printed yet.
 
 | Check | Result |
 |---|---|
@@ -169,12 +189,14 @@ These checks were run on the finished second-round models. The remix hasn't been
 | Lid opening sweep | No contact from 8° to 210° (the catches engage below 4°) |
 | Interior | 70.0 × 35.0 × 96.0 mm (W × D × H); the inside of the front wall is one plane from the floor to 93.5 mm |
 | Overhangs in print orientation | Only the features listed in section 4; the lid's bridge is 1.5 mm narrower, the body gains 2 mm² under the beads |
+| Signature (round 3) | Watertight; the body differs from round 2 only below 1 mm; the engraving's walls are vertical, its strokes 0.6–1.8 mm wide, its inside corners rounded to 0.2 mm, its loops 1.3–5.9 mm across, and it is 6.9 mm clear of the edge of the flat face |
 
 ## Known limitations
 
 - **Catch stiffness:** the beads are 0.3 mm tall, so 0.1 mm either way on the print changes the click a lot. Sand the beads if the lid is hard to open; build them up with paint or glue if it doesn't click.
 - **Pin fit:** the press fit depends on how accurately your printer makes small holes and rods. If the pin is too tight, scale its width and height (not its length) to 97% in the slicer, or run a 2.8 mm drill bit through the body knuckles. If it's loose, scale those to 102% or glue the head.
 - **Color:** STLs carry no color. The original 3MF paints the bezel black, so repaint it in Bambu Studio.
+- **Engraving:** the thinnest strokes of "Yoojin" are 0.6 mm, about one and a half nozzle widths, in the face printed on the bed. A first layer squashed too hard, or printed without elephant-foot compensation, can close them up.
 - **One bridge:** the lid's back wall is a 70 mm bridge. It's hidden and set back from the cards, but printers that bridge poorly will leave it rough.
 - **Capacity:** at 35 mm deep the box doesn't hold 100 double-sleeved or 120 single-sleeved cards. A 72 mm-deep version (70 × 72 × 96 mm inside) was built and checked during this work, but it wasn't exported.
 
@@ -186,3 +208,4 @@ There's no CAD source for the original, so the changes were made directly on Ash
 - **Hinge:** the old snap hinges were cut off and the new knuckles, pin holes and chamfers added with solid-geometry operations. The pin is a new part, modeled from scratch.
 - **Checks:** each part was re-checked after every change for watertightness, fit, hinge clearance, interior size and overhangs.
 - **Round 2:** the frame, catches, notch and chamfers were added the same way, as boolean unions and cuts on the first-round meshes. The script is [tools/round2_build.py](tools/round2_build.py); it reads [stl/remix/v1/](stl/remix/v1/) and writes [stl/remix/](stl/remix/v2/).
+- **Round 3:** Ashwood's recess was filled with a boolean union and the new lettering cut with a boolean difference. The lettering's outline is traced from the image at 0.01 mm per pixel, after widening the hairlines and rounding the inside corners. The script is [tools/round3_build.py](tools/round3_build.py); it reads [stl/remix/v2/](stl/remix/v2/) and the image and writes [stl/remix/v3/](stl/remix/v3/).

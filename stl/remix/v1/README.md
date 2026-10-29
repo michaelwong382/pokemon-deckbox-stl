@@ -8,4 +8,4 @@ The first version of the remix, kept for reference. It has the three fixes that 
 | Case-top_remix.stl | Front face (screen bezel) on the bed |
 | Hinge-pin_remix.stl | Lying on one of its flat sides; identical to the current pin |
 
-Print settings and assembly are the same as for the current files in [../v2/](../v2/). Use these only if you specifically want the plain-seam version; otherwise print the current set. Sections 1 to 5 of [improvements.md](../../../improvements.md) describe what this round changed, and sections 6 to 9 describe what the current round added on top.
+Print settings and assembly are the same as for the current files in [../v3/](../v3/). Use these only if you specifically want the plain-seam version; otherwise print the current set. Sections 1 to 5 of [improvements.md](../../../improvements.md) describe what this round changed, and sections 6 to 10 describe what the later rounds added on top.

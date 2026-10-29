@@ -6,23 +6,24 @@ A 3D-printable Pokémon TCG deck box styled like a Game Boy. The listing says it
 
 ## Versions at a glance
 
-Three sets of files live in [stl/](stl/), each with its own README. Print the current remix unless you have a reason not to.
+Four sets of files live in [stl/](stl/), each with its own README. Print the current remix unless you have a reason not to.
 
-| | Original by Ashwood | Remix round 1 | Remix round 2 (current) |
-|---|---|---|---|
-| Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/v2/](stl/remix/v2/) |
-| Fits sleeved cards | No: 92 mm inside, the height of a sleeve | Yes: 96 mm inside | Yes: 96 mm inside |
-| Inside (W × D × H) | 68 × 35 × 92 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm |
-| Outside (W × D × H) | 76 × 43 × 96 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm |
-| Capacity | About 60 sleeved cards | Same | Same |
-| Hinge | Two small snap hinges | Five knuckles on a printed pin | Same as round 1 |
-| Supports | Tree supports | None | None |
-| Screen frame on the lid | 1.8 mm plate | 1.8 mm plate | 4 mm frame, flush inside |
-| Holds the lid shut | Friction only | Friction only | Two snap catches |
-| Grip for opening | The window | The window | Thumb notch under the lid |
-| Lid's inner edges | Square | Square | Lead-in chamfers |
-| Parts to print | 5 | 6 (adds the pin) | 6 |
-| Test-printed | Yes, by the designer | No | No |
+| | Original by Ashwood | Remix round 1 | Remix round 2 | Remix round 3 (current) |
+|---|---|---|---|---|
+| Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/v2/](stl/remix/v2/) | [stl/remix/v3/](stl/remix/v3/) |
+| Fits sleeved cards | No: 92 mm inside, the height of a sleeve | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside |
+| Inside (W × D × H) | 68 × 35 × 92 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm |
+| Outside (W × D × H) | 76 × 43 × 96 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm |
+| Capacity | About 60 sleeved cards | Same | Same | Same |
+| Hinge | Two small snap hinges | Five knuckles on a printed pin | Same as round 1 | Same as round 1 |
+| Supports | Tree supports | None | None | None |
+| Screen frame on the lid | 1.8 mm plate | 1.8 mm plate | 4 mm frame, flush inside | 4 mm frame, flush inside |
+| Holds the lid shut | Friction only | Friction only | Two snap catches | Two snap catches |
+| Grip for opening | The window | The window | Thumb notch under the lid | Thumb notch under the lid |
+| Lid's inner edges | Square | Square | Lead-in chamfers | Lead-in chamfers |
+| Engraved in the bottom | "Ashwood" | "Ashwood" | "Ashwood" | "Yoojin", in script |
+| Parts to print | 5 | 6 (adds the pin) | 6 | 6 |
+| Test-printed | Yes, by the designer | No | No | No |
 
 The D-pad and buttons are the designer's in every version.
 
@@ -77,7 +78,7 @@ Photos from the MakerWorld listing, by Ashwood.
 
 ## Remix
 
-A modified version of Ashwood's box that fits sleeved cards, has a stronger hinge, and prints without supports. The depth is unchanged, so it still holds about 60 sleeved cards. A second round of changes makes the screen frame 4 mm thick, adds snap catches that hold the lid shut, a thumb notch for opening, and lead-in chamfers so the closing lid can't catch a card. Every fix is documented in detail in [improvements.md](improvements.md).
+A modified version of Ashwood's box that fits sleeved cards, has a stronger hinge, and prints without supports. The depth is unchanged, so it still holds about 60 sleeved cards. A second round of changes makes the screen frame 4 mm thick, adds snap catches that hold the lid shut, a thumb notch for opening, and lead-in chamfers so the closing lid can't catch a card. A third round replaces the designer's signature engraved in the bottom with "Yoojin" in script. Every fix is documented in detail in [improvements.md](improvements.md).
 
 ![Render of the remixed deckbox, closed, with the D-pad and buttons in place](images/remix/remix_front.png)
 
@@ -99,21 +100,24 @@ A modified version of Ashwood's box that fits sleeved cards, has a stronger hing
 | Closure | Friction only | Two snap catches in the side seams |
 | Opening | Nothing to grip but the window | Thumb notch under the lid's bottom edge |
 | Lid's inner edges | Square | Lead-in chamfers at the front, sides and back |
+| Engraved in the bottom | "Ashwood" in blackletter, 41 × 10 mm | "Yoojin" in script, 60 × 24 mm |
 
 - The extra 4 mm of height is all in the lid, above the screen, so the screen still frames the same part of the card.
 - The extra width is 1 mm on each side, so the screen, D-pad and buttons stay where they were.
-- The front details, the signature on the bottom, and the lid's light friction fit along the side seams are unchanged.
-- The screen frame, catches, notch and chamfers are the second round of changes; see [improvements.md](improvements.md#round-2) sections 6 to 9.
+- The front details and the lid's light friction fit along the side seams are unchanged.
+- The screen frame, catches, notch and chamfers are the second round of changes; see [improvements.md](improvements.md#round-2) sections 6 to 9. The engraving in the bottom is the third; see [section 10](improvements.md#10-signature-in-the-bottom).
+
+![Render of the body from below, tipped back with its front edge at the top, showing "Yoojin" engraved in script across the bottom](images/remix/remix_bottom.png)
 
 ### Remix files
 
 | File | Print orientation |
 |---|---|
-| [Case-bottom_remix.stl](stl/remix/v2/Case-bottom_remix.stl) | Upright, open top facing up |
-| [Case-top_remix.stl](stl/remix/v2/Case-top_remix.stl) | Front face (screen bezel) on the bed |
-| [Hinge-pin_remix.stl](stl/remix/v2/Hinge-pin_remix.stl) | Lying on one of its flat sides |
+| [Case-bottom_remix.stl](stl/remix/v3/Case-bottom_remix.stl) | Upright, open top facing up |
+| [Case-top_remix.stl](stl/remix/v3/Case-top_remix.stl) | Front face (screen bezel) on the bed |
+| [Hinge-pin_remix.stl](stl/remix/v3/Hinge-pin_remix.stl) | Lying on one of its flat sides |
 
-All three STLs are already oriented for printing. The D-pad and buttons are unchanged, so print them from [Case-GB.3mf](stl/original/Case-GB.3mf) or the original STLs. The first-round files, before the screen frame, catches, notch and chamfers, are kept in [stl/remix/v1/](stl/remix/v1/). Each folder has a README with its own file list and settings.
+All three STLs are already oriented for printing. The D-pad and buttons are unchanged, so print them from [Case-GB.3mf](stl/original/Case-GB.3mf) or the original STLs. The earlier rounds are kept: [stl/remix/v2/](stl/remix/v2/) is the same box with Ashwood's signature in the bottom, and [stl/remix/v1/](stl/remix/v1/) is from before the screen frame, catches, notch and chamfers. Each folder has a README with its own file list and settings.
 
 ### Recommended print settings
 
@@ -128,6 +132,7 @@ Turn supports **off** for all three parts. Apart from the tops of small holes an
 | Material | PLA or PETG | PLA or PETG |
 
 - **Bridge:** the inside of the lid's back wall prints as one 70 mm bridge. It's hidden inside the lid and set back 1 mm, so a little sag can't touch the cards. If your printer bridges poorly (PETG often does), turn on thick bridges in the slicer.
+- **Engraving:** "Yoojin" is cut 1 mm into the face that sits on the bed, with its thinnest strokes 0.6 mm wide. A first layer squashed too hard closes them up, so level the bed and leave the slicer's elephant-foot compensation on.
 - **Spare pin:** the pin is small, so print two.
 - **Brim cleanup:** trim the pin's brim cleanly so no edge catches in the hinge holes.
 - **Bezel color:** STLs carry no color. To get the black bezel back, paint it in Bambu Studio, as in the original 3MF.
