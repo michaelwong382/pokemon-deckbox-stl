@@ -1,6 +1,6 @@
 # Expected printout
 
-Reference renders of the remix (grey = body, blue = lid, green = pin). Compare a print against these. Views 01 to 14 were made from the second round, without the buttons, and the box has looked the same from these angles since; view 15 shows the bottom from round 3 on. The later rounds have their own renders: [stl/remix/v3/example_images/](../stl/remix/v3/example_images/) for the bottom, [stl/remix/v4/example_images/](../stl/remix/v4/example_images/) for the box with its buttons in place, and [stl/remix/v5/example_images/](../stl/remix/v5/example_images/) for the current box with the recessed pin head and the test coupons.
+Reference renders of the remix (grey = body, blue = lid, green = pin). Compare a print against these. Views 01 to 14 were made from the second round, without the buttons, and the box has looked the same from these angles since; view 15 shows the bottom from round 3 on. The later rounds have their own renders: [stl/remix/v3/example_images/](../stl/remix/v3/example_images/) for the bottom, [stl/remix/v4/example_images/](../stl/remix/v4/example_images/) for the box with its buttons in place, and [stl/remix/v5/example_images/](../stl/remix/v5/example_images/) for the current box with the recessed pin head and the test coupons, and [stl/100_deck_ver/example_images/](../stl/100_deck_ver/example_images/) for the 100-card version.
 
 | File | Shows |
 |---|---|

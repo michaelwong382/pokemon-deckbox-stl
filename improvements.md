@@ -20,6 +20,7 @@ This documents every change in the remix of Ashwood's [Pokemon tcg deckbox: Game
 | 12 | The engraving's two smallest loops are 1.3 mm islands of first layer, 1 mm tall, that a nozzle can knock off | Engraving 0.8 mm deep with loops under 3 mm² filled: no island under 2.4 mm |
 | 13 | The pin's head stands 1.5 mm proud of the hinge | 4 mm round head, flush in a recess in the end knuckle; knock-out hole at the other end |
 | 14 | Every press fit depends on the printer, and finding out takes a five-hour body print | Three coupons cut from the real files test the buttons and the hinge in under an hour |
+| 15 | 35 mm deep: about 60 single-sleeved or 50 double-sleeved cards | A 100-card version in [stl/100_deck_ver/](stl/100_deck_ver/): the round-5 box 37 mm deeper, 70 × 72 × 96 mm inside |
 
 ## 1. Interior height: 92 → 96 mm
 
@@ -232,9 +233,27 @@ With the pin and one of each button, that is about 20 cm³, against 90 cm³ for 
 
 ![Render of the three coupons and the small parts laid out on a bed in print orientation](stl/remix/v5/example_images/22_test_coupons_as_printed.png)
 
+## 100-card version
+
+A deeper version of the round-5 box for a 100-card deck in double sleeves, in [stl/100_deck_ver/](stl/100_deck_ver/). It is not a new round: the round-5 files stay the current 60-card box, and the 100-card version is built from them by [tools/deck100_build.py](tools/deck100_build.py).
+
+![Side views of the 60-card box and the 100-card box with their fronts aligned: the same front and hinge, a deeper body and lid, and a gentler straight seam between them](images/remix/deck100_side_by_side.png)
+
+## 15. Depth: 35 → 72 mm
+
+**Problem.** The box is 35 mm deep inside: about 60 single-sleeved cards, or 50 double-sleeved. A 100-card deck in double sleeves (a perfect-fit inner sleeve and a standard outer sleeve) stacks to 62–66 mm and sits at 68–70 mm in a box.
+
+**Fix.** 37 mm more depth, all of it between the catches and the back wall: 72 mm inside, 80 mm outside. The width and height stay at 70 × 96 mm inside, because double sleeves are the same 66–67 × 91–92 mm as single ones.
+
+Without CAD, the depth was added in two steps. First, everything behind a cut plane 36.7 mm behind the front face (the back wall, the hinge, the back part of the floor and the walls) moves back 37 mm, and the faces that cross the plane, plain floor, wall and lid plate with no vertices within 2 mm of it, simply get longer. Second, two features that run the whole depth at a slope would get a kink from that: the side seam where the lid's wall meets the body's, and the top of the body's inner wall (the "tongue") that runs up inside the lid. Both are planes, rising from the front corner to the back wall (the seam from 66.0 to 85.0 mm up, the tongue from 73.9 to 85.0). Each plane was rotated about its front edge to pass through the moved back edge, and every vertex on either plane, which includes the catch bead and groove, the lid's bottom edges and lead-in chamfers, and the short strips where the planes wrap round the front corners onto the front face, was moved vertically onto the rotated plane. Nothing else in the side walls has vertices at those heights, so every wall face stays flat, the catches keep their shape and their 17 mm from the front face, and the lid's 0.22 mm clearance above the seam is the same everywhere. The seam goes from 25° to 14°; the lid's side walls are still 32 mm deep at the front and 15 mm at the back.
+
+The body starts from the round-4 body and repeats round 5's three cuts (the engraving, the pin-head recess with its lead-in, the knock-out hole) after deepening, with the hinge axis moved back: the recess leaves sliver faces in the end knuckle that the boolean engine mishandles if anything is cut afterwards on the bigger mesh, so those cuts come last. "Yoojin" is cut again from the same trace, 0.8 mm deep, in the middle of the 74 × 76 mm bottom.
+
+**Result.** Inside 70.0 × 72.0 × 96.0 mm. A 67 × 69 × 92 mm block, a 100-card double-sleeved deck with 1.5 mm to spare each way, clears the body and the closed lid. The front wall with its seats and notch, and the back wall with the hinge, are identical to round 5 (no measurable difference in volume); the seam and tongue planes are straight to 0.001 mm; the lid clears the body from 15° to 210° of opening and, closed, overlaps it only along the 0.05 mm friction strips, which are now 72 mm long instead of 36 (23.4 mm³ against 10.0); the pin seats with zero overlap. The body is 96 cm³ against 68 for round 5's. Because the friction strips are twice as long, the lid may feel firmer to open; sanding the outer faces of the two tongues lightly eases it. Not test-printed.
+
 ## What didn't change
 
-- **Depth:** still 35 mm inside, so the box holds about 60 single-sleeved or about 50 double-sleeved cards.
+- **Depth:** the numbered rounds are all 35 mm deep inside, so they hold about 60 single-sleeved or about 50 double-sleeved cards. The [100-card version](#100-card-version) is the one file set with a different depth.
 - **Front details:** the screen, bezel, D-pad recess, button holes and speaker grille.
 - **Button tops:** the visible parts of the D-pad and buttons are the designer's shapes. Round 4 changes only what sits inside the front wall, and the seats in the body are untouched.
 - **Lid and buttons from round 4 on:** round 5 copies the round-4 lid, D-pad and buttons byte for byte; the body changes only in its bottom 0.8 mm and inside the hinge's two end knuckles.
@@ -260,6 +279,7 @@ These checks were run on the finished second-round models; the round-3 body, the
 | Engraving (round 5) | Watertight; the body differs from round 4 only below 0.8 mm and inside the end knuckles; the ceiling is one plane at 0.8 mm; 175.3 mm², smallest island 2.45 mm across, strokes 0.6–1.8 mm |
 | Pin and recess (round 5) | Seated pin overlaps neither body nor lid; head on the recess floor with 0.15 mm round it; tail 0.3 mm from the blind end; a 1.5 mm rod passes the knock-out hole to the tail; 0.85 mm of knuckle wall round the recess; lid sweep identical to round 4 from 0° to 210° |
 | Coupons (round 5) | Watertight; the buttons overlap the seats coupon exactly as the body (0.205 and 0.072 mm³); the hinge strips and pin assemble with zero overlap and swing freely to 160°; overhangs are only the inherited features |
+| 100-card version | Watertight; front wall, back wall and hinge identical to round 5; seam and tongue planes straight to 0.001 mm, the lid 0.22–0.23 mm above the seam everywhere; cavity 72.0 × 70.0 × 96.0 mm, and a 69 × 67 × 92 mm block clears body and lid; lid sweep clear from 15° to 210°; pin seated with zero overlap; overhangs only the inherited features plus the longer bottom round-over |
 
 ## Known limitations
 
@@ -270,7 +290,7 @@ These checks were run on the finished second-round models; the round-3 body, the
 - **Engraving:** the thinnest strokes of "Yoojin" are 0.6 mm, about one and a half nozzle widths, in the face printed on the bed, 0.8 mm deep. A first layer squashed too hard, or printed without elephant-foot compensation, can close them up.
 - **Button fit:** the ribs press only 0.05–0.08 mm, sized for the usual shrink of a printed hole. A printer that makes holes true to size will hold the buttons more lightly (glue them); one that makes them small needs the two peg holes opened with a 3 mm drill.
 - **One bridge:** the lid's back wall is a 70 mm bridge. It's hidden and set back from the cards, but printers that bridge poorly will leave it rough.
-- **Capacity:** at 35 mm deep the box doesn't hold 100 double-sleeved or 120 single-sleeved cards. A 72 mm-deep version (70 × 72 × 96 mm inside) was built and checked during this work, but it wasn't exported.
+- **Capacity:** the numbered rounds are 35 mm deep and hold about 60 single-sleeved or 50 double-sleeved cards. For 100 double-sleeved cards print the [100-card version](stl/100_deck_ver/); it has not been test-printed either, and its lid's friction strips are twice as long, so the lid may feel firmer to open.
 
 ## How the changes were made
 
@@ -283,3 +303,4 @@ There's no CAD source for the original, so the changes were made directly on Ash
 - **Round 3:** Ashwood's recess was filled with a boolean union and the new lettering cut with a boolean difference. The lettering's outline is traced from the image at 0.01 mm per pixel, after widening the hairlines and rounding the inside corners. The script is [tools/round3_build.py](tools/round3_build.py); it reads [stl/remix/v2/](stl/remix/v2/) and the image and writes [stl/remix/v3/](stl/remix/v3/).
 - **Round 4:** each button is the designer's part cut off at the front face, with a new base extruded from the seat's outline offset inward, and a new peg or ribs built from primitives and unioned on. The script is [tools/round4_build.py](tools/round4_build.py); it reads [stl/original/](stl/original/) and [stl/remix/v3/](stl/remix/v3/) and writes [stl/remix/v4/](stl/remix/v4/).
 - **Round 5:** the round-4 engraving was filled with a boolean union and the lettering cut again from the same trace, 0.8 mm deep, with the loops under 3 mm² filled in the traced image first. The recess, its lead-in and the knock-out hole are boolean cuts in the knuckles; the pin is drawn afresh as a convex hull (the octagonal shank with its tail chamfer) with a sliced cylinder for the head. The coupons are boolean intersections of the finished body and lid with boxes, plus a box foot. The script is [tools/round5_build.py](tools/round5_build.py); it reads [stl/remix/v4/](stl/remix/v4/) and the image and writes [stl/remix/v5/](stl/remix/v5/).
+- **100-card version:** every vertex behind a cut plane through plain wall is moved back 37 mm, and the vertices on the two sloping planes (the seam and the tongue) are moved vertically onto the same planes re-sloped about their front edges, so no face is left kinked or twisted; the engraving is filled and cut again in the middle of the new bottom, then round 5's hinge cuts are repeated with the axis moved. The script is [tools/deck100_build.py](tools/deck100_build.py); it reads [stl/remix/v4/](stl/remix/v4/) (body) and [stl/remix/v5/](stl/remix/v5/) and writes [stl/100_deck_ver/](stl/100_deck_ver/).

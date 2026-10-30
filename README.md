@@ -6,28 +6,28 @@ A 3D-printable Pokémon TCG deck box styled like a Game Boy. The listing says it
 
 ## Versions at a glance
 
-Six sets of files live in [stl/](stl/), each with its own README. Print the current remix unless you have a reason not to.
+Seven sets of files live in [stl/](stl/), each with its own README. Print the current remix unless you have a reason not to; for a 100-card deck, print the [100-card version](stl/100_deck_ver/).
 
-| | Original by Ashwood | Remix round 1 | Remix round 2 | Remix round 3 | Remix round 4 | Remix round 5 (current) |
-|---|---|---|---|---|---|---|
-| Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/v2/](stl/remix/v2/) | [stl/remix/v3/](stl/remix/v3/) | [stl/remix/v4/](stl/remix/v4/) | [stl/remix/v5/](stl/remix/v5/) |
-| Fits sleeved cards | No: 92 mm inside, the height of a sleeve | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside |
-| Inside (W × D × H) | 68 × 35 × 92 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm |
-| Outside (W × D × H) | 76 × 43 × 96 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm |
-| Capacity | About 60 sleeved cards | Same | Same | Same | Same | Same |
-| Hinge | Two small snap hinges | Five knuckles on a printed pin | Same as round 1 | Same as round 1 | Same as round 1 | Same, with the pin head flush in the end knuckle |
-| Supports | Tree supports | None | None | None | None | None |
-| Screen frame on the lid | 1.8 mm plate | 1.8 mm plate | 4 mm frame, flush inside | 4 mm frame, flush inside | 4 mm frame, flush inside | 4 mm frame, flush inside |
-| Holds the lid shut | Friction only | Friction only | Two snap catches | Two snap catches | Two snap catches | Two snap catches |
-| Grip for opening | The window | The window | Thumb notch under the lid | Thumb notch under the lid | Thumb notch under the lid | Thumb notch under the lid |
-| Lid's inner edges | Square | Square | Lead-in chamfers | Lead-in chamfers | Lead-in chamfers | Lead-in chamfers |
-| Engraved in the bottom | "Ashwood" | "Ashwood" | "Ashwood" | "Yoojin", in script | "Yoojin", in script | "Yoojin", in script, 0.8 mm deep |
-| D-pad and buttons | The designer's: drawn the exact size of their seats, forced in | Same | Same | Same | Redrawn: 0.15 mm clearance, held by small ribs | Same as round 4 |
-| Fit-test coupons | None | None | None | None | None | Three, cut from the real files: the button seats and the hinge |
-| Parts to print | 5 | 6 (adds the pin) | 6 | 6 | 6 | 6, plus 3 optional test coupons |
-| Test-printed | Yes, by the designer | No | No | No | No | No |
+| | Original by Ashwood | Remix round 1 | Remix round 2 | Remix round 3 | Remix round 4 | Remix round 5 (current) | 100-card version |
+|---|---|---|---|---|---|---|---|
+| Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/v2/](stl/remix/v2/) | [stl/remix/v3/](stl/remix/v3/) | [stl/remix/v4/](stl/remix/v4/) | [stl/remix/v5/](stl/remix/v5/) | [stl/100_deck_ver/](stl/100_deck_ver/) |
+| Fits sleeved cards | No: 92 mm inside, the height of a sleeve | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside | Yes: 96 mm inside |
+| Inside (W × D × H) | 68 × 35 × 92 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 35 × 96 mm | 70 × 72 × 96 mm |
+| Outside (W × D × H) | 76 × 43 × 96 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 43 × 100 mm | 78 × 80 × 100 mm |
+| Capacity | About 60 sleeved cards | Same | Same | Same | Same | Same | About 100 double-sleeved cards |
+| Hinge | Two small snap hinges | Five knuckles on a printed pin | Same as round 1 | Same as round 1 | Same as round 1 | Same, with the pin head flush in the end knuckle | Same as round 5 |
+| Supports | Tree supports | None | None | None | None | None | None |
+| Screen frame on the lid | 1.8 mm plate | 1.8 mm plate | 4 mm frame, flush inside | 4 mm frame, flush inside | 4 mm frame, flush inside | 4 mm frame, flush inside | 4 mm frame, flush inside |
+| Holds the lid shut | Friction only | Friction only | Two snap catches | Two snap catches | Two snap catches | Two snap catches | Two snap catches |
+| Grip for opening | The window | The window | Thumb notch under the lid | Thumb notch under the lid | Thumb notch under the lid | Thumb notch under the lid | Thumb notch under the lid |
+| Lid's inner edges | Square | Square | Lead-in chamfers | Lead-in chamfers | Lead-in chamfers | Lead-in chamfers | Lead-in chamfers |
+| Engraved in the bottom | "Ashwood" | "Ashwood" | "Ashwood" | "Yoojin", in script | "Yoojin", in script | "Yoojin", in script, 0.8 mm deep | "Yoojin", in script, 0.8 mm deep |
+| D-pad and buttons | The designer's: drawn the exact size of their seats, forced in | Same | Same | Same | Redrawn: 0.15 mm clearance, held by small ribs | Same as round 4 | Same as round 4 |
+| Fit-test coupons | None | None | None | None | None | Three, cut from the real files: the button seats and the hinge | The same three as round 5 |
+| Parts to print | 5 | 6 (adds the pin) | 6 | 6 | 6 | 6, plus 3 optional test coupons | 6, plus 3 optional test coupons |
+| Test-printed | Yes, by the designer | No | No | No | No | No | No |
 
-The D-pad and buttons are the designer's up to round 3. Round 4 redraws the parts of them that sit inside the front wall so they push in by hand; the seats in the body are the same in every version, so the round-4 buttons also fit the earlier bodies and the original. Round 5 changes nothing you see from the front: it makes the engraving shallower and free of tiny islands, sinks the pin's head into the hinge, and adds three small coupons for testing the fits before the long prints.
+The D-pad and buttons are the designer's up to round 3. Round 4 redraws the parts of them that sit inside the front wall so they push in by hand; the seats in the body are the same in every version, so the round-4 buttons also fit the earlier bodies and the original. Round 5 changes nothing you see from the front: it makes the engraving shallower and free of tiny islands, sinks the pin's head into the hinge, and adds three small coupons for testing the fits before the long prints. The 100-card version is round 5 made 37 mm deeper, for a 100-card deck in double sleeves; nothing but the depth changes.
 
 ## Source
 
@@ -80,7 +80,7 @@ Photos from the MakerWorld listing, by Ashwood.
 
 ## Remix
 
-A modified version of Ashwood's box that fits sleeved cards, has a stronger hinge, and prints without supports. The depth is unchanged, so it still holds about 60 sleeved cards. A second round of changes makes the screen frame 4 mm thick, adds snap catches that hold the lid shut, a thumb notch for opening, and lead-in chamfers so the closing lid can't catch a card. A third round replaces the designer's signature engraved in the bottom with "Yoojin" in script. A fourth redraws the D-pad and buttons, which were the exact size of their seats and had to be forced in, so they push into the front by hand. A fifth round makes the engraving safer to print, recesses the pin head into the hinge, and adds three fit-test coupons. Every fix is documented in detail in [improvements.md](improvements.md).
+A modified version of Ashwood's box that fits sleeved cards, has a stronger hinge, and prints without supports. The depth is unchanged, so it still holds about 60 sleeved cards. A second round of changes makes the screen frame 4 mm thick, adds snap catches that hold the lid shut, a thumb notch for opening, and lead-in chamfers so the closing lid can't catch a card. A third round replaces the designer's signature engraved in the bottom with "Yoojin" in script. A fourth redraws the D-pad and buttons, which were the exact size of their seats and had to be forced in, so they push into the front by hand. A fifth round makes the engraving safer to print, recesses the pin head into the hinge, and adds three fit-test coupons. Every fix is documented in detail in [improvements.md](improvements.md). A 100-card version of the current remix, 37 mm deeper, is in [stl/100_deck_ver/](stl/100_deck_ver/); see [100-card version](#100-card-version).
 
 ![Render of the remixed deckbox, closed, with the D-pad and buttons in place](images/remix/remix_front.png)
 
@@ -130,6 +130,12 @@ A modified version of Ashwood's box that fits sleeved cards, has a stronger hing
 
 All nine STLs are already oriented for printing; the three coupons are optional, see [Test the fits first](#test-the-fits-first). The earlier rounds are kept: [stl/remix/v4/](stl/remix/v4/) is the same box with the 1 mm engraving and the pin head standing proud of the hinge, [stl/remix/v3/](stl/remix/v3/) is the box with the designer's press-fit buttons, [stl/remix/v2/](stl/remix/v2/) has Ashwood's signature in the bottom, and [stl/remix/v1/](stl/remix/v1/) is from before the screen frame, catches, notch and chamfers. Each folder has a README with its own file list and settings.
 
+### 100-card version
+
+![Render of the 60-card and 100-card boxes side by side, closed, with their fronts aligned](images/remix/deck100_next_to_60.png)
+
+[stl/100_deck_ver/](stl/100_deck_ver/) is the round-5 box made 37 mm deeper: 70 × 72 × 96 mm inside and 78 × 80 × 100 mm outside, for 100 cards in double sleeves (a perfect-fit inner sleeve and a standard outer sleeve; oversized 69 × 94 mm outer sleeves don't fit any version of this box). The front, buttons, hinge, pin, catches and engraving are the same, so everything below applies to it too. Its body needs an 80 × 80 mm footprint and its lid prints 87 mm tall; the pin, buttons and coupons are the same files. The sloping side seam runs between the same front and back points, so it is gentler, and the lid's friction strips along the seams are twice as long, so the lid may feel a little firmer to open. Details are in the folder's [README](stl/100_deck_ver/README.md) and in [improvements.md](improvements.md#100-card-version).
+
 ### Recommended print settings
 
 Turn supports **off** for every part. Apart from the tops of small holes and the lid's back-wall bridge, no overhang is shallower than 45°. The second-round features need nothing extra: the thick screen frame lies on the bed, the catch grooves and chamfers are vertical or at 45°, and the notch and the catch beads on the body are small.
@@ -149,6 +155,7 @@ Turn supports **off** for every part. Apart from the tops of small holes and the
 - **Bezel color:** STLs carry no color. To get the black bezel back, paint it in Bambu Studio, as in the original 3MF.
 - **Pin fit:** if the pin comes out too tight or too loose, see the tuning tips under [Hinge assembly](#hinge-assembly).
 - **Unsure about the fits?** Print the three coupons first; see the next section.
+- **100-card version:** the same settings. Its body is 80 mm deep and its lid stands 87 mm tall on the bed.
 
 ### Test the fits first
 
