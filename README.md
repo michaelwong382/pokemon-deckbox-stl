@@ -8,6 +8,8 @@ A 3D-printable Pokémon TCG deck box styled like a Game Boy. The listing says it
 
 Seven sets of files live in [stl/](stl/), each with its own README. Print the current remix unless you have a reason not to; for a 100-card deck, print the [100-card version](stl/100_deck_ver/).
 
+[stl/pickachu/](stl/pickachu/) holds seven alternatives to round 5 with a Pikachu drawing engraved 0.8 mm into the back wall (a sitting Pikachu, and an all-over Pikachu-in-berries pattern upright, turned, or edge to edge with the engraving fading, the lines dropping out, or the drawing thinned but still joined at the edges), the last also with a Pokéball in the top of the lid; otherwise only the body differs. Its README has previews of every drawing on the back wall.
+
 | | Original by Ashwood | Remix round 1 | Remix round 2 | Remix round 3 | Remix round 4 | Remix round 5 (current) | 100-card version |
 |---|---|---|---|---|---|---|---|
 | Files | [stl/original/](stl/original/) | [stl/remix/v1/](stl/remix/v1/) | [stl/remix/v2/](stl/remix/v2/) | [stl/remix/v3/](stl/remix/v3/) | [stl/remix/v4/](stl/remix/v4/) | [stl/remix/v5/](stl/remix/v5/) | [stl/100_deck_ver/](stl/100_deck_ver/) |
